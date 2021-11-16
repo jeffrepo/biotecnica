@@ -13,6 +13,7 @@
     'depends': ['sale'],
     'data': [
         'views/sale_views.xml',
+        'views/res_partner_view.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,

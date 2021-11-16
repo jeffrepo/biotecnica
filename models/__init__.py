@@ -2,3 +2,4 @@
 
 from . import sale
 from . import biotecnica
+from . import res_partner
