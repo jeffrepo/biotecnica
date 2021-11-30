@@ -10,7 +10,7 @@
     'description': """
 
 """,
-    'depends': ['sale'],
+    'depends': ['sale','account'],
     'data': [
         'views/sale_views.xml',
         'views/res_partner_view.xml',

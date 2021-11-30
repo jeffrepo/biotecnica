@@ -7,7 +7,12 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <field name="website" position="after">
+
+                <field name="country_id" position="replace"/>
+                <field name="street2" position="after">
+                    <field name="country_id"/>
+                </field>
+                <field name="state_id" position="after">
                     <field name="municipio_id"></field>
                 </field>
             </field>
