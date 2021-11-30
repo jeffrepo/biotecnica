@@ -7,17 +7,7 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     municipio_id = fields.Many2one('biotecnica.municipio', string="Municipio",store=True)
-    validar_orden = fields.Boolean('Validar orden')
-
-    def action_confirm(self):
-        res = super(SaleOrder, self).action_confirm()
-        for orden in self:
-            if orden.validar_orden:
-                return res
-            else:
-                raise UserError(_('No permite validar por falta de permisos'))
-
-
+    validar_orden = fields.Boolean('Validar orden', copy=False)
 
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
