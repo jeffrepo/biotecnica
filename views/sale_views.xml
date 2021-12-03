@@ -8,7 +8,7 @@
       <field name="arch" type="xml">
           <field name="partner_invoice_id" position="before">
               <field name="municipio_id" placeholder="Municipio ..."/>
-              <field name="validar_orden" groups="account.group_account_manager"/>
+              <field name="validar_orden" groups="account.group_account_invoice"/>
           </field>
       </field>
   </record>
