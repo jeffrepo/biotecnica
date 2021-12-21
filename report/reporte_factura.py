@@ -160,6 +160,15 @@ class ReporteFactura(models.AbstractModel):
     def c_letras(self,monto):
         return self.num_a_letras(monto)
 
+    def obtener_so(self,factura):
+        so = False
+        venta_ids = self.env['sale.order'].search([('invoice_ids','!=',False)])
+        if venta_ids:
+            for venta in venta_ids:
+                if venta.invoice_ids:
+                    if factura.id in venta.invoice_ids.ids:
+                        so = venta.name
+        return so
 
     @api.model
     def _get_report_values(self, docids, data=None):
@@ -172,5 +181,6 @@ class ReporteFactura(models.AbstractModel):
             'docs': docs,
             'fecha_vencimiento': self.fecha_vencimiento,
             'c_letras': self.c_letras,
+            'obtener_so':  self.obtener_so,
 
         }

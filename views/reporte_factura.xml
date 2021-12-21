@@ -13,13 +13,15 @@
                       <div style='float:right;text-align:center;color:#505881;width:25%'>
                           DOCUMENTO TRIBUTARIO ELECTRONICO<br/>
                           FACTURA CAMBIARIA
+                          <!-- <span t-esc="o.journal_id.tipo_dte_fel.upper()"/> -->
+
                       </div>
                       <div style="clear:both"/>
                       <div style="text-align:center;color:#505881">
-                          COBISA<br/>
-                          4 calle 0-32 zona 1 Guatemala, Guatemala<br/>
-                          PBX: 2253-7414 / corporacionbiotecnica@gmail.com<br/>
-                          <strong>NIT: 6060810-2</strong>
+                          <span t-field="o.company_id.name"/><br/>
+                          <span t-field="o.journal_id.direccion_sucursal"/><br/>
+                          PBX: <span t-field="o.company_id.phone"/> / <span t-field="o.company_id.email"/><br/>
+                          <strong>NIT: <span t-field="o.company_id.vat"/></strong>
                       </div>
                     </header>
                     <div style="clear:both"/>
@@ -43,6 +45,7 @@
                                     <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:150px">
                                         <div style="padding:25px;">
                                           <strong>Nombre:</strong> <span t-esc="o.partner_id.name"/> <br/>
+                                          <strong>Código de cliente:</strong> <span t-esc="o.partner_id.ref"/> <br/>
                                           <strong>NIT:</strong> <span t-esc="o.partner_id.vat"/> <br/>
                                           <strong>Dirección:</strong> <span t-esc="o.partner_id.street"/> <span t-esc="o.partner_id.street2"/> <span t-esc="o.partner_id.city"/>
                                           <br/><strong>Fecha de vencimiento:</strong>
@@ -60,7 +63,15 @@
                                           <strong>Serie:</strong> <span t-esc="o.serie_documento_fel"/> <br/>
                                           <strong>Numero:</strong> <span t-esc="o.numero_documento_fel"/><br/>
                                           <strong>Vendedor:</strong> <span t-esc="o.user_id.name"/><br/>
-                                          <strong>Referencia:</strong> <span t-esc="o.payment_reference"/><br/>
+                                          <strong>Referencia:</strong>
+
+                                          <t t-if="obtener_so(o)">
+                                              <span t-esc="obtener_so(o)"/>
+                                          </t>
+                                          <t t-else="">
+                                            <span t-esc="o.payment_reference"/>
+                                          </t>
+                                          <br/>
                                         </div>
                                     </div>
                                 </td>
@@ -102,7 +113,7 @@
                                 <td style="vertical-align:middle;text-align:center">
                                   <div style="height:0.25px"/>
                                   <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;background-color:#CCCEDD;color:#505881">
-                                      <div>4D2D94
+                                      <div>
                                         <strong>TOTAL</strong><br/>
                                       </div>
                                   </div>
@@ -130,7 +141,7 @@
                                           <div style=";width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;color:#505881">
                                               <div>
                                                 <strong>TOTAL EN LETRAS:<br/></strong>
-                                                <div style="padding:25px;"><span t-esc="c_letras(o.amount_total)"/></div>
+                                                <div style="padding:15px;"><span t-esc="c_letras(o.amount_total)"/></div>
                                               </div>
                                           </div>
                                       </td>
@@ -161,7 +172,7 @@
                                           <div style="height:0.25px"/>
                                           <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;color:#505881">
                                               <div>
-                                                <strong>NOMBRE DE QUIEN RECIBE:<br/></strong><br/>
+                                                <strong><center>NOMBRE DE QUIEN RECIBE:</center><br/></strong><br/>
                                               </div>
                                           </div>
 
@@ -170,7 +181,7 @@
                                           <div style="height:0.25px"/>
                                           <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;color:#505881">
                                               <div>
-                                                <strong>FECHA ACEPTACION<br/></strong><br/>
+                                                <strong><center>FECHA ACEPTACION</center><br/></strong><br/>
                                               </div>
                                               <div style="text-align:center;font-size:12px"><span t-esc="o.invoice_date" t-options="{'widget': 'date'}"/></div>
                                           </div>
@@ -180,7 +191,7 @@
                                           <div style="height:0.25px"/>
                                           <div style="color:#505881;font-size:8px;;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px">
                                               <div style="text-decoration:overline; text-align:center; vertical-align:middle;border:15px">
-                                                <strong><br/><br/>FIRMA DEL CLIENTE O REPRESENTANTE QUE ACEPTA HABER RECIBIDO</strong><br/>
+                                                <strong><br/><br/><br/><br/>FIRMA DEL CLIENTE O REPRESENTANTE QUE ACEPTA HABER RECIBIDO</strong><br/>
                                               </div>
                                               <div style=" text-align:center;vertical-align:middle;border-top:-10px">
                                                   <strong>EL TOTAL DE LA MERCADERIA ESPECIFICADA EN ESTA FACTURA</strong>
@@ -196,6 +207,50 @@
                                             <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
                                                 <div>
                                                     <span t-field="o.company_id.texto_factura"/>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                                <div>
+                                                    <br/>
+                                                    <table style="margin: 0px auto;">
+                                                        <tr>
+                                                            <td style="text-align:left"><strong>AUTORIZACIÓN</strong></td>
+                                                            <td style="text-align:left; padding-left:10px"><span t-field="o.numero_autorizacion_fel"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align:left"><strong>CERTIFICADOR</strong></td>
+                                                            <td style="text-align:left; padding-left:10px">TEKRA, SOCIEDAD ANONIMA</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align:left"><strong>NIT</strong></td>
+                                                            <td style="text-align:left; padding-left:10px"><strong>107346834</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="text-align:left"><strong>FECHA CERTIFICACIÓN</strong></td>
+                                                            <td style="text-align:left; padding-left:10px"><span t-field="o.fecha_fel"/></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+
+                                        </td>
+                                        <td colspan="2">
+                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                                <div>
+                                                  <br/>
+                                                  <img t-if="o.codigo_qr" t-att-src="'data:image/png;base64,%s' % to_text(o.codigo_qr)" style="width:17%"/>
                                                 </div>
                                             </div>
 
