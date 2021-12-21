@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+            id="biotecnica_factura"
+            string="Factura Biotecnica"
+            model="account.move"
+            report_type="qweb-pdf"
+            file="biotecnica.reporte_factura"
+            name="biotecnica.reporte_factura"
+        />
+
+    </data>
+</odoo>

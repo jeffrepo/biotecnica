@@ -14,6 +14,9 @@
     'data': [
         'views/sale_views.xml',
         'views/res_partner_view.xml',
+        'views/reporte_factura.xml',
+        'views/res_company_views.xml',
+        'views/report.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,
