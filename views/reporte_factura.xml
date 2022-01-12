@@ -8,21 +8,25 @@
                 <div class="article">
                   <header>
                       <div style='float:left'>
-                          <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="width:100%"/>
+                          <br/>
+                          <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="width:250px"/>
                       </div>
-                      <div style='float:right;text-align:center;color:#505881;width:25%'>
+                      <div style='float:right;text-align:center;color:black;width:300px'>
+                          <br/>
                           DOCUMENTO TRIBUTARIO ELECTRONICO<br/>
                           FACTURA CAMBIARIA
                           <!-- <span t-esc="o.journal_id.tipo_dte_fel.upper()"/> -->
 
                       </div>
-                      <div style="clear:both"/>
-                      <div style="text-align:center;color:#505881">
+                      <br/>
+                      <div style="margin: 0 auto; width: 300px; text-align: center">
                           <span t-field="o.company_id.name"/><br/>
                           <span t-field="o.journal_id.direccion_sucursal"/><br/>
                           PBX: <span t-field="o.company_id.phone"/> / <span t-field="o.company_id.email"/><br/>
                           <strong>NIT: <span t-field="o.company_id.vat"/></strong>
                       </div>
+                      <!-- <div style="clear:both"/> -->
+                      <div style="clear:both"/>
                     </header>
                     <div style="clear:both"/>
                     <div class="page">
@@ -32,17 +36,23 @@
                             <tr>
                                 <td colspan="3"></td>
                                 <td colspan="2" style="vertical-align:middle;text-align:center;">
-                                    <div style="width:100%;border-radius:10px; border: 2px ;background-color:#CCCEDD;color:#505881; overflow: hidden;">
+                                  <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;color:black">
+                                      <div>
+                                        <strong>Fecha</strong><br/>
+                                        <span t-esc="o.invoice_date" t-options="{'widget': 'date'}"/>
+                                      </div>
+                                  </div>
+                                    <!-- <div style="width:100%;border-radius:10px; border: 2px ;color:black; overflow: hidden;">
                                         <div>
                                           <strong>Fecha</strong><br/>
                                           <span t-esc="o.invoice_date" t-options="{'widget': 'date'}"/>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </td>
                             </tr>
-                            <tr style="color:#555679">
+                            <tr style="color:black">
                                 <td colspan="2" style="height:150px">
-                                    <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:150px">
+                                    <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:150px">
                                         <div style="padding:25px;">
                                           <strong>Nombre:</strong> <span t-esc="o.partner_id.name"/> <br/>
                                           <strong>Código de cliente:</strong> <span t-esc="o.partner_id.ref"/> <br/>
@@ -57,7 +67,7 @@
                                     </div>
                                 </td>
                                 <td colspan="3" style="height:150px">
-                                    <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:150px">
+                                    <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:150px">
                                         <div style="padding:25px">
 
                                           <strong>Serie:</strong> <span t-esc="o.serie_documento_fel"/> <br/>
@@ -79,7 +89,7 @@
                             <tr>
                                 <td style="vertical-align:middle;text-align:center" class="solid">
                                     <div style="height:0.25px"/>
-                                    <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;background-color:#CCCEDD;color:#505881">
+                                    <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;color:black">
                                         <div>
                                           <strong>CODIGO</strong><br/>
                                         </div>
@@ -87,7 +97,7 @@
                                 </td>
                                 <td style="vertical-align:middle;text-align:center">
                                   <div style="height:0.25px"/>
-                                  <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;background-color:#CCCEDD;color:#505881">
+                                  <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;color:black">
                                       <div>
                                         <strong>DESCRIPCION</strong><br/>
                                       </div>
@@ -96,7 +106,7 @@
                                 </td>
                                 <td style="vertical-align:middle;text-align:center">
                                   <div style="height:0.25px"/>
-                                  <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;background-color:#CCCEDD;color:#505881">
+                                  <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;color:black">
                                       <div>
                                         <strong>CANTIDAD</strong><br/>
                                       </div>
@@ -104,7 +114,7 @@
                                 </td>
                                 <td style="vertical-align:middle;text-align:center">
                                   <div style="height:0.25px"/>
-                                  <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;background-color:#CCCEDD;color:#505881">
+                                  <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;color:black">
                                       <div>
                                         <strong>PRECIO</strong><br/>
                                       </div>
@@ -112,7 +122,7 @@
                                 </td>
                                 <td style="vertical-align:middle;text-align:center">
                                   <div style="height:0.25px"/>
-                                  <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;background-color:#CCCEDD;color:#505881">
+                                  <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;color:black">
                                       <div>
                                         <strong>TOTAL</strong><br/>
                                       </div>
@@ -122,23 +132,148 @@
                             <tbody style="height:200%">
                                 <t t-foreach="o.invoice_line_ids" t-as="linea">
                                     <tr>
-                                        <td style="vertical-align:middle;text-align:center;"><span t-field="linea.product_id.default_code"/></td>
-                                        <td style="vertical-align:middle;padding-left:10px;"><span t-field="linea.product_id.name"/></td>
-                                        <td style="vertical-align:middle;text-align:center"><span t-field="linea.quantity"/></td>
-                                        <td style="vertical-align:middle;text-align:center;"><span t-field="linea.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
-                                        <td style="vertical-align:middle;text-align:center;"><span t-field="linea.price_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                        <td style="border-left: 1px solid black;vertical-align:middle;text-align:center;"><span t-field="linea.product_id.default_code"/></td>
+                                        <td style="border-left: 1px solid black;vertical-align:middle;padding-left:10px;"><span t-field="linea.product_id.name"/></td>
+                                        <td style="border-left: 1px solid black;vertical-align:middle;text-align:center"><span t-field="linea.quantity"/></td>
+                                        <td style="border-left: 1px solid black;vertical-align:middle;text-align:center;">Q <span t-field="linea.price_unit" t-options='{"widget": "float", "precision": 2}'/></td>
+                                        <td style="border-right: 1px solid black;border-left: 1px solid black;vertical-align:middle;text-align:center;"> Q <span t-field="linea.price_total" t-options='{"widget": "float", "precision": 2}'/></td>
                                     </tr>
                                 </t>
+                                <tr>
+                                    <td colspan="2">
+                                        <div style=";width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black">
+                                            <div>
+                                              <strong>TOTAL EN LETRAS:<br/></strong>
+                                              <div style="padding:15px;"><span t-esc="c_letras(o.amount_total)"/></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td colspan="2">
+                                      <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black;vertical-align:middle;text-align:center;">
+                                          <div>
+                                            <br  />
+                                            <strong>TOTAL FACTURA:<br/></strong><br/>
+                                          </div>
+                                      </div>
+
+
+                                    </td>
+                                    <td>
+                                      <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;vertical-align:middle;text-align:center;">
+                                          <div>
+                                            <br  />
+                                            <strong>Q  <span t-esc="o.amount_total" t-options='{"widget": "float", "precision": 2}'/></strong><br/>
+                                          </div>
+                                      </div>
+
+
+
+                                    </td>
+                                </tr>
+                                  <tr>
+                                      <td>
+                                        <div style="height:0.25px"/>
+                                        <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black">
+                                            <div>
+                                              <strong><center>NOMBRE DE QUIEN RECIBE:</center><br/></strong><br/>
+                                            </div>
+                                        </div>
+
+                                      </td>
+                                      <td>
+                                        <div style="height:0.25px"/>
+                                        <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black">
+                                            <div>
+                                              <strong><center>FECHA ACEPTACION</center><br/></strong><br/>
+                                            </div>
+                                            <div style="text-align:center;font-size:12px"><span t-esc="o.invoice_date" t-options="{'widget': 'date'}"/></div>
+                                        </div>
+
+                                      </td>
+                                      <td colspan="3">
+                                        <div style="height:0.25px"/>
+                                        <div style="color:black;font-size:8px;;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px">
+                                            <div style="text-decoration:overline; text-align:center; vertical-align:middle;border:15px">
+                                              <strong><br/><br/><br/><br/>FIRMA DEL CLIENTE O REPRESENTANTE QUE ACEPTA HABER RECIBIDO</strong><br/>
+                                            </div>
+                                            <div style=" text-align:center;vertical-align:middle;border-top:-10px">
+                                                <strong>EL TOTAL DE LA MERCADERIA ESPECIFICADA EN ESTA FACTURA</strong>
+                                            </div>
+                                        </div>
+
+
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="5">
+                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                              <div>
+                                                  <span t-field="o.company_id.texto_factura"/>
+                                              </div>
+                                          </div>
+
+
+
+
+
+
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td colspan="3">
+                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                              <div>
+                                                  <br/>
+                                                  <table style="margin: 0px auto;">
+                                                      <tr>
+                                                          <td style="text-align:left"><strong>AUTORIZACIÓN</strong></td>
+                                                          <td style="text-align:left; padding-left:10px"><span t-field="o.numero_autorizacion_fel"/></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td style="text-align:left"><strong>CERTIFICADOR</strong></td>
+                                                          <td style="text-align:left; padding-left:10px">TEKRA, SOCIEDAD ANONIMA</td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td style="text-align:left"><strong>NIT</strong></td>
+                                                          <td style="text-align:left; padding-left:10px"><strong>107346834</strong></td>
+                                                      </tr>
+                                                      <tr>
+                                                          <td style="text-align:left"><strong>FECHA CERTIFICACIÓN</strong></td>
+                                                          <td style="text-align:left; padding-left:10px"><span t-field="o.fecha_fel"/></td>
+                                                      </tr>
+                                                  </table>
+                                              </div>
+                                          </div>
+
+
+
+                                      </td>
+                                      <td colspan="2">
+                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                              <div>
+                                                <br/>
+                                                <img t-if="o.codigo_qr" t-att-src="'data:image/png;base64,%s' % to_text(o.codigo_qr)" style="width:17%"/>
+                                              </div>
+                                          </div>
+
+
+
+
+
+
+                                      </td>
+                                  </tr>
 
                                 </tbody>
                               </table>
 
 
-                              <div style="position:absolute; bottom:-1100px;width:95%;display:flex">
+                              <!-- <div style="position:absolute; bottom:-1100px;width:95%;display:flex">
                                 <table style="margin: 0px auto;width:100%;">
                                   <tr>
                                       <td colspan="2">
-                                          <div style=";width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;color:#505881">
+                                          <div style=";width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black">
                                               <div>
                                                 <strong>TOTAL EN LETRAS:<br/></strong>
                                                 <div style="padding:15px;"><span t-esc="c_letras(o.amount_total)"/></div>
@@ -146,7 +281,7 @@
                                           </div>
                                       </td>
                                       <td colspan="2">
-                                        <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;background-color:#CCCEDD;color:#505881;vertical-align:middle;text-align:center;">
+                                        <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black;vertical-align:middle;text-align:center;">
                                             <div>
                                               <br  />
                                               <strong>TOTAL FACTURA:<br/></strong><br/>
@@ -156,7 +291,7 @@
 
                                       </td>
                                       <td>
-                                        <div style="width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;vertical-align:middle;text-align:center;">
+                                        <div style="width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;vertical-align:middle;text-align:center;">
                                             <div>
                                               <br  />
                                               <strong>  <span t-field="o.amount_total"/></strong><br/>
@@ -170,7 +305,7 @@
                                     <tr>
                                         <td>
                                           <div style="height:0.25px"/>
-                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;color:#505881">
+                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black">
                                               <div>
                                                 <strong><center>NOMBRE DE QUIEN RECIBE:</center><br/></strong><br/>
                                               </div>
@@ -179,7 +314,7 @@
                                         </td>
                                         <td>
                                           <div style="height:0.25px"/>
-                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;color:#505881">
+                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;color:black">
                                               <div>
                                                 <strong><center>FECHA ACEPTACION</center><br/></strong><br/>
                                               </div>
@@ -189,7 +324,7 @@
                                         </td>
                                         <td colspan="3">
                                           <div style="height:0.25px"/>
-                                          <div style="color:#505881;font-size:8px;;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px">
+                                          <div style="color:black;font-size:8px;;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px">
                                               <div style="text-decoration:overline; text-align:center; vertical-align:middle;border:15px">
                                                 <strong><br/><br/><br/><br/>FIRMA DEL CLIENTE O REPRESENTANTE QUE ACEPTA HABER RECIBIDO</strong><br/>
                                               </div>
@@ -204,7 +339,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="5">
-                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
                                                 <div>
                                                     <span t-field="o.company_id.texto_factura"/>
                                                 </div>
@@ -219,7 +354,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="3">
-                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
                                                 <div>
                                                     <br/>
                                                     <table style="margin: 0px auto;">
@@ -247,7 +382,7 @@
 
                                         </td>
                                         <td colspan="2">
-                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px #555679 solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                            <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
                                                 <div>
                                                   <br/>
                                                   <img t-if="o.codigo_qr" t-att-src="'data:image/png;base64,%s' % to_text(o.codigo_qr)" style="width:17%"/>
@@ -263,7 +398,7 @@
                                     </tr>
 
                                   </table>
-                                </div>
+                                </div> -->
 
 
 
@@ -279,7 +414,7 @@
                           }
                         </style>
                         <table style="margin: 0px auto;width:100%;">
-                                <tr style="background-color:#CCCEDD;color:#505881;vertical-align:middle;">
+                                <tr style="background-color:#CCCEDD;color:black;vertical-align:middle;">
                                     <th style="text-align:center"><strong>CODIGO</strong></th>
                                     <th style="text-align:center"><strong>DESCRIPCION</strong></th>
                                     <th style="text-align:center"><strong>CANTIDAD</strong></th>
@@ -289,24 +424,24 @@
                             <div style="height:200px">
                                 <t t-foreach="o.invoice_line_ids" t-as="linea">
                                     <tr style="1px solid #4D2D94">
-                                        <td style="1px solid #4D2D94;vertical-align:middle;text-align:center;border-left: 0.25px solid #555679;"><span t-field="linea.product_id.default_code"/></td>
+                                        <td style="1px solid #4D2D94;vertical-align:middle;text-align:center;border-left: 0.25px solid black;"><span t-field="linea.product_id.default_code"/></td>
                                         <td style="1px solid #4D2D94;vertical-align:middle;padding-left:10px;"><span t-field="linea.product_id.name"/></td>
                                         <td style="1px solid #4D2D94;vertical-align:middle;text-align:center"><span t-field="linea.quantity"/></td>
                                         <td style="1px solid #4D2D94;vertical-align:middle;text-align:center;"><span t-field="linea.price_unit" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
-                                        <td style="1px solid #4D2D94;vertical-align:middle;text-align:center;border-right: 0.25px solid #555679;"><span t-field="linea.price_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
+                                        <td style="1px solid #4D2D94;vertical-align:middle;text-align:center;border-right: 0.25px solid black;"><span t-field="linea.price_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></td>
                                     </tr>
                                 </t>
 
                             </div>
                             <tr style="1px solid #4D2D94">
-                                <td style="font-size:8px;border:1px solid #4D2D94;color:#505881" colspan="2"><strong>TOTAL EN LETRAS:<br/></strong><br/></td>
-                                <td style="border:1px solid #4D2D94;background-color:#CCCEDD;color:#505881" colspan="2"><strong>TOTAL FACTURA:<br/></strong><br/></td>
+                                <td style="font-size:8px;border:1px solid #4D2D94;color:black" colspan="2"><strong>TOTAL EN LETRAS:<br/></strong><br/></td>
+                                <td style="border:1px solid #4D2D94;color:black" colspan="2"><strong>TOTAL FACTURA:<br/></strong><br/></td>
                                 <td style="border:1px solid #4D2D94">  <strong>  <span t-field="o.amount_total"/></strong><br/></td>
                             </tr>
                             <tr style="1px solid #4D2D94">
-                                <td style="font-size:8px;border:1px solid #4D2D94;color:#505881"><strong>NOMBRE DE QUIEN RECIBE:<br/></strong><br/></td>
-                                <td style="font-size:8px;border:1px solid #4D2D94;color:#505881" ><strong>FECHA ACEPTACION<br/></strong><br/></td>
-                                <td style="font-size:8px;border:1px solid #4D2D94;color:#505881" colspan="3">  <strong>  FIRMA DEL CLIENTE O REPRESENTANTE QUE ACEPTA HABER RECIBIDO<br/>EL TOTAL DE LA MERCADERIA ESPECIFICADA EN ESTA FACTURA</strong><br/></td>
+                                <td style="font-size:8px;border:1px solid #4D2D94;color:black"><strong>NOMBRE DE QUIEN RECIBE:<br/></strong><br/></td>
+                                <td style="font-size:8px;border:1px solid #4D2D94;color:black" ><strong>FECHA ACEPTACION<br/></strong><br/></td>
+                                <td style="font-size:8px;border:1px solid #4D2D94;color:black" colspan="3">  <strong>  FIRMA DEL CLIENTE O REPRESENTANTE QUE ACEPTA HABER RECIBIDO<br/>EL TOTAL DE LA MERCADERIA ESPECIFICADA EN ESTA FACTURA</strong><br/></td>
                             </tr>
                             <tr>
                                 <td style="font-size:8px;border:1px solid #4D2D94;" colspan="5"><span t-field="o.company_id.texto_factura"/></td>
