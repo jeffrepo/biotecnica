@@ -19,7 +19,7 @@
 
                       </div>
                       <br/>
-                      <div style="margin: 0 auto; width: 300px; text-align: center">
+                      <div style="margin: 0 auto; width: 350px; text-align: center">
                           <span t-field="o.company_id.name"/><br/>
                           <span t-field="o.journal_id.direccion_sucursal"/><br/>
                           PBX: <span t-field="o.company_id.phone"/> / <span t-field="o.company_id.email"/><br/>
