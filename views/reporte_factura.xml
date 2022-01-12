@@ -9,9 +9,9 @@
                   <header>
                       <div style='float:left'>
                           <br/>
-                          <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="width:250px"/>
+                          <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="width:220px"/>
                       </div>
-                      <div style='float:right;text-align:center;color:black;width:300px'>
+                      <div style='float:right;text-align:center;color:black;width:250px'>
                           <br/>
                           DOCUMENTO TRIBUTARIO ELECTRONICO<br/>
                           FACTURA CAMBIARIA
