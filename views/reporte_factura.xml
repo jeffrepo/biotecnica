@@ -222,7 +222,7 @@
                                   </tr>
                                   <tr>
                                       <td colspan="3">
-                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:90px;text-align:center;vertical-align:middle">
                                               <div>
                                                   <br/>
                                                   <table style="margin: 0px auto;">
@@ -250,10 +250,10 @@
 
                                       </td>
                                       <td colspan="2">
-                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:75px;text-align:center;vertical-align:middle">
+                                          <div style="font-size:8px;width:100%;border-radius:10px; border: 2px black solid; overflow: hidden;height:90px;text-align:center;vertical-align:middle">
                                               <div>
                                                 <br/>
-                                                <img t-if="o.codigo_qr" t-att-src="'data:image/png;base64,%s' % to_text(o.codigo_qr)" style="width:17%"/>
+                                                <img t-if="o.codigo_qr" t-att-src="'data:image/png;base64,%s' % to_text(o.codigo_qr)" style="width:30%;"/>
                                               </div>
                                           </div>
 
