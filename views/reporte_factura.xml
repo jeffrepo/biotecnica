@@ -70,22 +70,20 @@
                                           <strong>Serie:</strong> <span t-esc="o.serie_documento_fel"/> <br/>
                                           <strong>Numero:</strong> <span t-esc="o.numero_documento_fel"/><br/>
                                           <strong>Vendedor:</strong> <span t-esc="o.user_id.name"/><br/>
-                                          <strong>Referencia:</strong><br/>
-                                          <strong>Fecha de vencimiento:</strong>
-                                          <t t-if="o.invoice_date_due">
-                                              <span t-esc="o.invoice_date_due" t-options="{'widget': 'date'}"/>
-                                          </t>
-                                          <br/>
-                                          <br/>
-
+                                          <strong>Referencia:</strong>
                                           <t t-if="obtener_so(o)">
                                               <span t-esc="obtener_so(o)"/>
                                           </t>
                                           <t t-else="">
                                             <span t-esc="o.payment_reference"/>
                                           </t>
-                                          <br/>
 
+                                          <br/>
+                                          <strong>Fecha de vencimiento:</strong>
+                                          <t t-if="o.invoice_date_due">
+                                              <span t-esc="o.invoice_date_due" t-options="{'widget': 'date'}"/>
+                                          </t>
+                                          <br/>
                                           <br/>
                                         </div>
                                     </div>
