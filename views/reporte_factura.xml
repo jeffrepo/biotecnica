@@ -181,7 +181,7 @@
                                             <div>
                                               <strong><center>FECHA ACEPTACION</center><br/></strong><br/>
                                             </div>
-                                            <div style="text-align:center;font-size:12px"><span t-esc="o.invoice_date" t-options="{'widget': 'date'}"/></div>
+                                            <!-- <div style="text-align:center;font-size:12px"><span t-esc="o.invoice_date" t-options="{'widget': 'date'}"/></div> -->
 
                                         </div>
 
