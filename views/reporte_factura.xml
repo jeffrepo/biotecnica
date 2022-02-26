@@ -136,7 +136,7 @@
                                 <t t-foreach="o.invoice_line_ids" t-as="linea">
                                     <tr>
                                         <td style="border-left: 1px solid black;vertical-align:middle;text-align:center;"><span t-field="linea.product_id.default_code"/></td>
-                                        <td style="border-left: 1px solid black;vertical-align:middle;padding-left:10px;"><span t-field="linea.product_id.name"/></td>
+                                        <td style="border-left: 1px solid black;vertical-align:middle;padding-left:10px;"><span t-field="linea.name"/></td>
                                         <td style="border-left: 1px solid black;vertical-align:middle;text-align:center"><span t-field="linea.quantity"/></td>
                                         <td style="border-left: 1px solid black;vertical-align:middle;text-align:center;">Q <span t-field="linea.price_unit" t-options='{"widget": "float", "precision": 2}'/></td>
                                         <td style="border-right: 1px solid black;border-left: 1px solid black;vertical-align:middle;text-align:center;"> Q <span t-field="linea.price_total" t-options='{"widget": "float", "precision": 2}'/></td>
