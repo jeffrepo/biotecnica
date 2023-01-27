@@ -56,7 +56,15 @@
                                         <div style="padding:25px;">
                                           <strong>Nombre:</strong> <span t-esc="o.partner_id.name"/> <br/>
                                           <strong>Código de cliente:</strong> <span t-esc="o.partner_id.ref"/> <br/>
-                                          <strong>NIT:</strong> <span t-esc="o.partner_id.vat"/> <br/>
+                                          <t t-if="o.partner_id.vat and o.partner_id.documento_personal_identificacion == False">
+                                              <strong>NIT:</strong> <span t-esc="o.partner_id.vat"/> <br/>
+                                          </t>
+                                          <t t-if="o.partner_id.vat and o.partner_id.documento_personal_identificacion">
+                                              <strong>NIT:</strong> <span t-esc="o.partner_id.vat"/> <br/>
+                                          </t>
+                                          <t t-if="o.partner_id.vat == False and o.partner_id.documento_personal_identificacion">
+                                              <strong>CUI:</strong> <span t-esc="o.partner_id.documento_personal_identificacion"/> <br/>
+                                          </t>
                                           <strong>Dirección:</strong> <span t-esc="o.partner_id.street"/> <span t-esc="o.partner_id.street2"/> <span t-esc="o.partner_id.city"/>, <span t-esc="o.partner_id.municipio_id.name"/>, <span t-esc="o.partner_id.state_id.name"/>
 
                                           <br/>
